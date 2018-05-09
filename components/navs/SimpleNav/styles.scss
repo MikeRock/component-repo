@@ -1,0 +1,19 @@
+.nav__list {
+background-color: paleturquoise; 
+list-style-type: none;   
+}
+.nav__item {
+    background-color: papayawhip;
+    display: inline-block;
+    overflow: hidden;
+}
+.nav__link {
+    background-color: plum;
+    text-decoration: none;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 20px;
+    display: inline-block;
+    text-shadow: 0 0 0 20px rgba(0, 0, 0, 0.3);
+
+}
