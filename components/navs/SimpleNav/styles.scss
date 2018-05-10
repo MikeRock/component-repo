@@ -1,19 +1,84 @@
-.nav__list {
-background-color: paleturquoise; 
-list-style-type: none;   
-}
-.nav__item {
-    background-color: papayawhip;
-    display: inline-block;
-    overflow: hidden;
-}
-.nav__link {
-    background-color: plum;
-    text-decoration: none;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 20px;
-    display: inline-block;
-    text-shadow: 0 0 0 20px rgba(0, 0, 0, 0.3);
+@import "globals.scss";
 
+.nav__list * {
+    box-sizing: border-box;
+}
+
+.nav__list {
+    list-style-type: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    background: $nav__list--bg;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav__item {
+    text-align: center;
+    display: block;
+    border-right: 2px solid rgba($nav_list--border-color, 0.4);
+    &:last-of-type {
+        border-right: none;
+    }
+}
+
+.nav__link {
+    text-decoration: none;
+    padding: 0 30px;
+    color: $nav__item--text;
+    display: block;
+    overflow: hidden;
+    &:hover i {
+        transform: translateY(-100%);
+    }
+    &:hover .nav__name-inner,
+    &:hover .nav__name::before {
+        transform: translateY(-100%);
+    }
+}
+
+.nav__icon {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    & i {
+        width: 100%;
+        height: 100%;
+        display: block;
+        line-height: 40px;
+        font-size: 32px;
+        transition: all 1s ease;
+        color: $nav__item--text;
+    }
+    & i:last-of-type {
+        color: $nav__item--hover-text;
+    }
+}
+
+.nav__name {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    & .nav__name-inner {
+        display: block;
+        transition: all 1s ease;
+    }
+    &::before {
+        position: absolute;
+        content: attr(data-text);
+        width: 100%;
+        height: 100%;
+        top: 100%;
+        left: 0;
+        color: $nav__item--hover-text;
+        transition: all 1s ease;
+    }
 }

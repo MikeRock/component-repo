@@ -13,10 +13,19 @@ export default class SimpleCard extends Component {
 
   render() {
     return (
-      <div className={_["simple-card"]}>
-        <div className={_["simple-card__header"]}>{this.props.header}</div>
-        <div className={_["simple-card__body"]}>{this.props.body}</div>
-        <div className={_["simple-card__footer"]}>{this.props.footer}</div>
+      <div className={_["card"]}>
+        <div className={_["card__photo"]}></div>
+        <ul className={_["card__social"]}>
+          <li className={_["card__social-item"]}><a className={_["card__social-link"]}><i className="fa fa-facebook"></i></a></li>
+          <li className={_["card__social-item"]}><a className={_["card__social-link"]}><i className="fa fa-instagram"></i></a></li>
+          <li className={_["card__social-item"]}><a className={_["card__social-link"]}><i className="fa fa-google-plus"></i></a></li>
+          <li className={_["card__social-item"]}><a className={_["card__social-link"]}><i className="fa fa-twitter"></i></a></li>
+          <li className={_["card__social-item"]}><a className={_["card__social-link"]}><i className="fa fa-linkedin"></i></a></li>
+        </ul>
+        <div className={_["card__body"]}>
+          <h1 className={_["card__body-header"]}>Sexy Asian &times;&times;&times;</h1>
+          <p className={_["card__body-text"]}> Lirem Ipsum dolot</p>
+        </div>
       </div>
     );
   }

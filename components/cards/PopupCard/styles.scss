@@ -1,0 +1,120 @@
+.card {
+  width: 300px;
+  height: 400px;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: paleturquoise;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%,-50%);
+  perspective: 1000px;
+  & * {
+    box-sizing: border-box;
+  }
+
+  &::before {
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: -100px;
+    z-index: 2;
+    transition: all 0.5s ease;
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 40%, transparent);
+  }
+  &:hover .card__body {
+    bottom: 0;
+  }
+  &:hover::before {
+    bottom: 0;
+  }
+  &:hover .card__photo {
+    filter: blur(2px);
+  }
+}
+
+.card__photo {
+position: absolute;
+width: 100%;
+height: 100%;
+background: url(https://pre00.deviantart.net/88bd/th/pre/f/2016/084/4/8/akira_by_hideyoshi-d9weecf.jpg);
+background-position: top 50% left 35%;
+background-size: cover;
+background-repeat: no-repeat;
+z-index: 1;
+transition: all 0.5s ease;
+}
+
+.card__body {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 55%;
+  padding: 0 10px;
+  bottom: -100px;
+  left: 0;
+  transition: all 0.5s ease;
+  z-index: 3;
+}
+
+.card__body-header {
+  margin: 10px 0;
+  font-family: monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255,255,255,1);
+  text-transform: uppercase;
+}
+.card__body-text {
+  margin-top: 10px;
+  color: rgba(255,255,255,1);
+  text-transform: uppercase;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.card__pills {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.card__pill {
+  display: block;
+  height: 1.5rem;
+  padding: 0 15px;
+  position: relative;
+  font-family: monospace;
+  color: rgba(0,0,0,0.2);
+  font-size: 1rem;
+  background-color: orange;
+  border-radius: 20px;
+  margin: 2px 2px;
+  line-height: 1.5rem;
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.2);
+    margin: 2px 10px;
+  }
+}
+
+.card__pill[data-type="genre1"] {
+  background-color: lightblue;
+}
+.card__pill[data-type="genre2"] {
+  background-color: lightcoral;
+}
+.card__pill[data-type="genre3"] {
+  background-color: lightseagreen;
+}
+.card__pill[data-type="genre4"] {
+  background-color: plum;
+}
+.card__pill[data-type="default"] {
+  background: repeating-linear-gradient( -45deg, #fff, #fff 5px, pink 5px, pink 10px);
+}
