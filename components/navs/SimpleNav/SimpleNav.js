@@ -1,5 +1,5 @@
 import { Component } from "react";
-import PropTyped from "prop-types";
+import PropTypes from "prop-types";
 import _ from "./styles.scss";
 
 export default class SimpleNav extends Component {
@@ -7,19 +7,43 @@ export default class SimpleNav extends Component {
     return (
       <ul className={_["nav__list"]}>
         <li className={_["nav__item"]}>
-          <a href="#" className={_["nav__link"]} >ITEM1</a>
+          <a href="#" className={_["nav__link"]} >
+            <div className={_["nav__icon"]}>
+              <i className="fa fa-camera-retro"></i>
+              <i className="fa fa-camera-retro"></i>
+            </div>
+            <div className={_["nav__name"]} data-text="NAME"><span className={_["nav__name-inner"]}>NAME</span></div>
+          </a>
         </li>
         <li className={_["nav__item"]}>
-          <a href="#" className={_["nav__link"]} >ITEM2</a>
+          <a href="#" className={_["nav__link"]} >
+            <div className={_["nav__icon"]}>
+              <i className="fa fa-cog"></i>
+              <i className="fa fa-cog"></i>
+            </div>
+            <div className={_["nav__name"]} data-text="NAME"><span className={_["nav__name-inner"]}>NAME</span></div>
+          </a>
         </li>
         <li className={_["nav__item"]}>
-          <a href="#" className={_["nav__link"]} >ITEM3</a>
+          <a href="#" className={_["nav__link"]} > <div className={_["nav__icon"]}>
+            <i className="fa fa-camera-retro"></i>
+            <i className="fa fa-camera-retro"></i>
+          </div>
+            <div className={_["nav__name"]} data-text="NAME"><span className={_["nav__name-inner"]}>NAME</span></div></a>
         </li>
         <li className={_["nav__item"]}>
-          <a href="#" className={_["nav__link"]} >ITEM4</a>
+          <a href="#" className={_["nav__link"]} > <div className={_["nav__icon"]}>
+            <i className="fa fa-camera-retro"></i>
+            <i className="fa fa-camera-retro"></i>
+          </div>
+            <div className={_["nav__name"]} data-text="NAME"><span className={_["nav__name-inner"]}>NAME</span></div></a>
         </li>
         <li className={_["nav__item"]}>
-          <a href="#" className={_["nav__link"]} >ITEM5</a>
+          <a href="#" className={_["nav__link"]} > <div className={_["nav__icon"]}>
+            <i className="fa fa-camera-retro"></i>
+            <i className="fa fa-camera-retro"></i>
+          </div>
+            <div className={_["nav__name"]} data-text="NAME"><span className={_["nav__name-inner"]}>NAME</span></div></a>
         </li>
       </ul>
     );
