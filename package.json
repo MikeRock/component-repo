@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon --exec babel-node server.js",
     "build": "babel-node ./node_modules/webpack/bin/webpack",
-    "dev": "babel-node node_modules/.bin/webpack-dev-server --watch --progress --inline"
+    "dev": "babel-node node_modules/.bin/webpack-dev-server --watch --progress --inline --hot"
   },
   "author": "",
   "license": "ISC",
