@@ -1,0 +1,217 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+.card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+   // width: 315px;
+    width: auto;
+    min-height: 450px;
+    margin: 30px auto;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .3);
+    z-index: 999;
+}
+
+.card-header {
+    position: relative;
+    height: 220px;
+    background-image: url(https://images.pexels.com/photos/428333/pexels-photo-428333.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    background-position: top;
+    z-index: 1;
+}
+
+.card-header:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgb(5, 85, 134), rgba(181, 181, 181, 0.1));
+    z-index: 1;
+}
+
+.card-header-bar {
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: 100%;
+    z-index: 0;
+    width: 100%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
+    border: none;
+    overflow: hidden;
+}
+
+.btn-message {
+    display: inline-block;
+    background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077483/profile-card/images/message.svg) no-repeat;
+    width: 19.37px;
+    height: 16.99px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-menu {
+    display: inline-block;
+    background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077483/profile-card/images/menu.svg) no-repeat;
+    width: 19px;
+    height: 12.16px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+svg .polygon {
+    fill: #fff;
+}
+
+.card-header-slanted-edge {
+    position: absolute;
+    bottom: -3px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    bottom: -150px;
+    transform: skew(0deg,-10deg);
+    right: 0;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        bottom: -100px;
+    }
+}
+.btn-activity {
+    cursor: pointer;
+position: absolute;
+bottom: 110px;
+left: 0;
+right: 0;
+margin: 0 auto;
+width: 80%;
+text-align: center;  
+font: 1rem/2rem 'Pacifico'; 
+color: white; 
+transform: skew(0deg,10deg);
+border-radius: 20px;
+background: #00b09b; 
+background: linear-gradient(to right, #00b09b, #96c93d); 
+box-shadow: 0 0 10px rgba(#96c93d, .4);
+filter: none;
+transition: all 1s ease;
+&:hover {
+filter: brightness(110%);  
+}
+}
+.btn-follow {
+    position: absolute;
+    top: -15px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    transform: skew(0deg,10deg);
+    background: #00b09b; 
+    background: linear-gradient(to right, #00b09b, #96c93d); 
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(#96c93d, .4);
+
+}
+
+
+.btn-follow:after {
+    content: '';
+    position: absolute;
+    background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/add.svg) no-repeat;
+    width: 17px;
+    height: 17px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-body {
+    position: relative;
+    text-align: center;
+    padding: 0 10px;
+    background-color: white;
+    z-index: 2;
+}
+
+.name {
+    font-family: 'Pacifico', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.job-title {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 5px;
+    color: #919191;
+}
+
+.bio {
+    font-size: 14px;
+    color: #7B7B7B;
+    font-weight: 300;
+    margin: 10px auto;
+    line-height: 20px;
+}
+
+.social-accounts img {
+    width: 15px;
+}
+
+.social-accounts a {
+    margin-left: 10px;
+}
+
+.social-accounts a:first-child {
+    margin-left: 0;
+}
+
+.card-footer {
+    /*position:fixed; /* Full card width/height */
+    position: relative;
+    /* Fixed card width/height */
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.stat {
+    display: inline-block;
+    width: calc(100% / 3);
+   // float: left;
+    text-align: center;
+    border-left: 1px solid #EBEBEB;
+}
+
+.stat .label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #95989A;
+}
+
+.stat .value {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 5px;
+}
