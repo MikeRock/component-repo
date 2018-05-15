@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #282828;
+   -webkit-font-smoothing: antialiased;
+}
+
+.canvas {
+  position: absolute;
+}
+
+.container {
+  width: 375px;
+  height: 667px;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+}
+
+.title {
+  position: absolute;
+  left: 31px;
+  top: 42px;
+  opacity: 0;
+
+}
+
+.button {
+  position: absolute;
+  top: 312px;
+  left: 273px;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  opacity: 0;
+  cursor:pointer;
+}
+
+.img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: url(https://images.pexels.com/photos/6969/sunset-summer-hipster-pipe.jpg?auto=compress&cs=tinysrgb&h=750&w=1260);
+  background-size: cover;
+  background-position: center;
+}
+
+.rect {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+}
+
+.plus {
+  position: absolute;
+  top: 340px;
+  left: 301px;
+  width: 20px;
+  height: 20px;
+}
+
+.v {
+  position: absolute;	
+  top: 9px;
+  transform: rotate(90deg);
+}
+
+.h {
+  position: absolute;	
+  top: 9px;
+}
+
+.content {
+  position: absolute;
+  width: 375px;
+  height: 667px;
+}
+
+.name {
+  position: absolute;
+  font-family: "Pacifico", sans-serif;
+  font-size: 32px;
+  width: 375px;
+  text-align: center;
+  top: 370px;
+  opacity: 0.8
+}
+
+.description {
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  width: 321px;
+  top: 437px;
+  padding-left: 37px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+p {
+  display: inline;
+}
+
+.close {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  display: none;
+  cursor:pointer;
+  top: 20px;
+  left: 20px;
+  opacity: 0;
+}
+
+.sub {
+  position: absolute;
+  left: 32px;
+  top: 163px;
+  opacity: 0;
+  display: none;
+}
