@@ -6,6 +6,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import CleanWebpackPlugin from "clean-webpack-plugin";
 import autoprefixer from "autoprefixer";
+import ManifestPlugin from 'webpack-manifest-plugin'
 
 const config = {
   entry: {
@@ -24,6 +25,13 @@ const config = {
       {
         test: /\.jsx?$/,
         use: "babel-loader",
+        exclude: /node_modules/
+      },
+      {
+        test: /worker.jsx?$/,
+        use: {loader: 'worker-loader', options: {
+          name: 'worker.js'
+        }},
         exclude: /node_modules/
       },
       {
@@ -152,7 +160,8 @@ const config = {
     new webpack.optimize.CommonsChunkPlugin({
       children: true,
       async: "[name].[chunkhash].js"
-    })
+    }),
+    new ManifestPlugin()
   ]
 };
 

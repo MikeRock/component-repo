@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { SimpleCard, SimpleNav, SimpleForm, PopupCard ,SimpleList, SimpleListItem,
-SlantedCard, SimpleSlider, HoverCard, MaterialCard, RippleButton } from "./../components/index";
+SlantedCard, SimpleSlider, HoverCard, MaterialCard, RippleButton , Cache} from "./../components/index";
 import ReactDOM from "react-dom";
 import _ from "./styles.scss";
 
@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <div className={_["container"]}>
       <RippleButton />
+      <Cache />
       </div>
     );
   }

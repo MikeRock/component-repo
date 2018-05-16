@@ -9,4 +9,5 @@ export {default as SimpleList} from "./lists/SimpleList/SimpleList";
 export {default as SimpleListItem} from "./lists/SimpleList/SimpleListItem";
 export {default as SimpleSlider} from './sliders/SimpleSlider/SimpleSlider'
 export {default as RippleButton} from './buttons/RippleButton/RippleButton'
-
+export {default as PushNotification} from './misc/PushNotification/PushNotification'
+export {default as Cache} from './misc/Cache/Cache'
