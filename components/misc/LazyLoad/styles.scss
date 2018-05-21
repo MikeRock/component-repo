@@ -1,0 +1,9 @@
+.lazy {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.lazy__item {
+flex: 1 1 auto;
+}
