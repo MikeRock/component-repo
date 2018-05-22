@@ -38,24 +38,32 @@ export const async =  (loader, collection) => (
     constructor(props) {
       super(props);
 
-      this.Component = null;
-      this.state = { Component: AsyncComponent.Component };
+    this.Component = (<div></div>);
+      this.update = this.update.bind(this)
+      this.state = { component: AsyncComponent.Component };
     }
 
-    componentWillMount() {
-      if (!this.state.Component) {
+    update() {
+      this.forceUpdate()
+    }
+    shouldComponentUpdate(_,nextState) {
+      return nextState.component != this.state.component
+    }
+    componentWillUpdate() {
+      if (!this.state.component) {
         loader().then((Component) => {
           AsyncComponent.Component = Component;
 
-          this.setState({ Component });
+          this.setState({ component: Component });
         });
       }
     }
 
     render() {
+      const {component : Component} = this.state
       if (this.state.Component) {
         return (
-          <this.state.Component { ...this.props } { ...collection } />
+          <Component { ...this.props } { ...collection } />
         )
       }
 

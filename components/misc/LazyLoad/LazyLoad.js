@@ -1,14 +1,14 @@
 import {Component} from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import {isReactComponent, async} from './helpers/utils'
+import {isReactComponent} from './../../helpers/utils'
 /**
  * 
  * Added process.env.DYNAMIC_PATH to work with DefinePlugin and get half-dynamic chunks
  * Make sure the DefinePlugin is BEFORE the CommonsChunkPlugin
  */
 
-export default class LoazyLoad extends Component {
+export class LoazyLoad extends Component {
     constructor(...args) {
         super(...args)
         this.inView = this.inView.bind(this)
@@ -26,9 +26,6 @@ export default class LoazyLoad extends Component {
         }
         return null;
     };
-    loadAsync() {
-
-    }
     inView(ref) {
         const rect = ref.getBoundingClientRect()
        return  rect.top >= 0 &&
@@ -45,20 +42,20 @@ export default class LoazyLoad extends Component {
             e.preventDefault()
            if(inView(ref)) {
                const target = ref
-             //  if(this.props.async) this.props.onLoad(async(() => import(`${target.getAttribute('data-src')}`)),item)
                if(this.props.dynamic) import(/* webpackMode: lazy-once, webpackChunkName: dynamic */`${process.env.DYNAMIC_PATH}/${target.getAttribute('data-src')}`)
-               .then( ({default: item}) => this.props.onLoad(item, target))
-               else {
-                target.setAttribute('src',data);
-                target.onload = (e) => {target.removeAttribute('data-src')} }
-               }
+               .then( ({default: item}) => { this.props.onLoad(item, target); target.classList.remove('lazy__item--blurred')})
+               else  {
+                   this.props.onLoad(target.getAttribute('data-src'), target)
+                  target.classList.remove('lazy__item--blurred') 
+                }
+            }
             })
     })
     }
     render() {
         const children = React.Children.map(this.props.children,(child, index) => 
         React.cloneElement(child, {
-            className:`${child.props.className ||  ''} lazy__item`, 
+            className:`${child.props.className ||  ''} lazy__item ${this.props.blur ? ' lazy__item--blurred': ''}`, 
             ref: (el) => {
                 el && this.imgArr.push(
                     {index,ref: el}); typeof child.ref === 'function' && child.ref(el)}, 
@@ -76,6 +73,7 @@ export default class LoazyLoad extends Component {
 LoazyLoad.propTypes = {
     onLoad: PropTypes.func,
     dynamic: PropTypes.bool,
+    blur: PropTypes.bool
 }
 
 LoazyLoad.defaultProps = {
@@ -86,7 +84,7 @@ LoazyLoad.defaultProps = {
     } 
 }
 
-const lazy = _Component => data => class extends Component {
+export const lazy = data => _Component => class extends Component {
 constructor(...args) {
   super(...args)  
 }
