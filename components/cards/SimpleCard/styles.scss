@@ -6,12 +6,12 @@
   overflow: hidden;
   background-color: paleturquoise;
   border-radius: 15px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 1;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   perspective: 1000px;
   & * {
     box-sizing: border-box;
@@ -22,8 +22,7 @@
   }
   &:hover .card__photo {
     opacity: 0.6;
-    transform: translateY(-90px);
-   //animation: animate 0.5s;
+    transform: translateY(-90px); //animation: animate 0.5s;
   }
   &:hover .card__social-item {
     transform: translateY(0);
@@ -32,33 +31,33 @@
 }
 
 .card__photo {
-position: absolute;
-width: 100%;
-height: 100%;
-background: url(https://images.pexels.com/photos/713312/pexels-photo-713312.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-background-position: top 50% left 35%;
-background-size: cover;
-background-repeat: no-repeat;
-z-index: 3;
-transition: all 0.5s ease;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(https://images.pexels.com/photos/713312/pexels-photo-713312.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-position: top 50% left 35%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 3;
+  transition: all 0.5s ease;
 }
 
 .card__social {
-position: absolute;
-list-style-type: none;
-display: flex;
-margin: 0;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
-z-index: 3;
+  position: absolute;
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
 }
 
 .card__social-item {
-text-align: center;
-transform: translateY(100px);
-transition: all 0.7s ease;
-opacity: 0;
+  text-align: center;
+  transform: translateY(100px);
+  transition: all 0.7s ease;
+  opacity: 0;
 }
 
 .card__social-link {
@@ -72,12 +71,12 @@ opacity: 0;
   border-radius: 50%;
   font-size: 16px;
   &:hover i {
-    transition: all 0.8s ease; 
+    transition: all 0.8s ease;
     transform: rotateY(-360deg);
   }
 }
 
-.card__body {  
+.card__body {
   text-align: center;
   position: absolute;
   width: 100%;
@@ -95,15 +94,23 @@ opacity: 0;
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .card__body-text {
-  color: rgba(0,0,0,0.2);
+  color: rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   font-family: monospace;
   font-size: 0.8rem;
 }
+
 @keyframes animate {
-  0% {opacity: 1;
-    transform: translateY(0);}
-  50% {transform: translateY(-80px);}
-  100% {opacity: 0.4;}
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 0.4;
+  }
 }
