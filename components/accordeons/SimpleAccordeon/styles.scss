@@ -1,0 +1,63 @@
+.accordeon {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.accordeon--collapsed {
+   max-height: 0;
+   height: 0;
+   transition: all 1s linear;
+}
+.panel {
+    overflow: hidden;
+    height: auto;
+}
+.panel__heading {
+    height: 50px;
+    background-color: papayawhip;
+}
+.panel__name {
+   position: relative;
+    top: 50%;
+    left: 5px;
+    transform: translate(0,-50%);
+}
+.panel__body {
+    box-sizing: border-box;
+    max-height: 100px;
+    overflow: hidden;
+    background-color: pink;
+    transition: all 1s linear;
+}
+.accordeon__checkbox {
+    display: none;
+}
+.accordeon__label {
+    position: relative;
+    float: right;
+    top: 50%;
+    margin-right: 10px;
+    transform: translate(0, -50%);
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+}
+.accordeon__checkbox:checked  {
+    & ~ .accordeon__label {  
+        background-color: blue; 
+    }
+    
+}
+.accordeon__checkbox:not(:checked) {
+    & ~ .accordeon__label {
+        background-color: grey;
+    }
+}
+
+.panel {
+  transition: all 1s ease-in-out;  
+  background-color: white;
+}
