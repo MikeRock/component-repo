@@ -4,10 +4,14 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import webPush from 'web-push'
 import __ from 'colors/safe'
+import dotenv from 'dotenv'
+import multer from 'multer'
 
 __.setTheme({custom:['bgYellow','grey']})
+dotenv.config()
 
 const app = express()
+const upload = multer()
 const PORT = process.env.PORT || 8080
 const vapidPublicKey = 'BEMF_FKAfnLhdTWsZcGO2w7XP5FvDBzLFMg5rbxKs82IOrwSEZ46eucBXDN5WT28b25Dc9XQKCToBYZQTkeXbIc'
 const vapidPrivateKey = 'J1Uwyt20M64XmVRNOvsGokfGuc7S7VR4O-9gdJ7ioCE'
@@ -17,6 +21,7 @@ app.use(express.static(path.resolve(__dirname,'build')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(morgan('dev'))
+
 app.post('/push',(req, res) => {
 const subscriptionObj = req.body   
 const payload = {
@@ -42,6 +47,10 @@ app.get('/worker.js', (req, res) => {
 });
 app.get("*", (req, res) => {
     res.sendFile(path.resolve('build/index.html'))
+})
+app.post('*',upload.fields([]), (req, res) => {
+    res.send(200,"Success")
+
 })
 
 const server = app.listen(PORT, (err) => {
