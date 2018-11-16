@@ -2,10 +2,10 @@ version: '3'
 services:
   web:
     build: .
+    image: node_app
     command: npm run server
     volumes:
-      - .:/app
-      - /app/node_modules
+      - ./docker/build :/app/build
     ports:
       - "3000:3000"
     depends_on:
