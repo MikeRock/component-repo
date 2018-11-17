@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: node_app
+    command: npm run server
+    volumes:
+      - ./docker/build :/app/build
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    environment:
+      NODE_NAME: MIKE 
+  mongo:
+    image: mongo:latest
+
+     
