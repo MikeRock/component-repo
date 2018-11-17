@@ -34,10 +34,7 @@ export default class SimpleSlider extends Component {
         </div>
 
         <div className={`${_["slide_img"]} ${this.state.two ? _["show"] : ""}`} id={_["two"]}>
-          <img
-            src="https://images.pexels.com/photos/261909/pexels-photo-261909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            alt=""
-          />
+          <img src="https://images.pexels.com/photos/261909/pexels-photo-261909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
 
           <label className={_["prev"]} htmlFor={_["i1"]}>
             <span />
@@ -48,10 +45,7 @@ export default class SimpleSlider extends Component {
         </div>
 
         <div className={_["slide_img"]} id={_["three"]}>
-          <img
-            alt=""
-            src="https://images.pexels.com/photos/6035/healthy-apple-summer-garden.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          />
+          <img alt="" src="https://images.pexels.com/photos/6035/healthy-apple-summer-garden.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
 
           <label className={_["prev"]} htmlFor={_["i2"]}>
             <span />
@@ -62,10 +56,7 @@ export default class SimpleSlider extends Component {
         </div>
 
         <div className={_["slide_img"]} id={_["four"]}>
-          <img
-            alt=""
-            src="https://images.pexels.com/photos/908284/pexels-photo-908284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          />
+          <img alt="" src="https://images.pexels.com/photos/908284/pexels-photo-908284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
 
           <label className={_["prev"]} htmlFor={_["i3"]}>
             <span />

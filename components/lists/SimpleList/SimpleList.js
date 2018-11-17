@@ -24,13 +24,7 @@ export default class SimpleList extends Component {
     );
     return (
       <div className={_["list"]}>
-        <div
-          className={`${_["list__container"]} ${
-            this.state.showDetails ? _["list--details"] : ""
-          }`}
-        >
-          {_children}
-        </div>
+        <div className={`${_["list__container"]} ${this.state.showDetails ? _["list--details"] : ""}`}>{_children}</div>
       </div>
     );
   }

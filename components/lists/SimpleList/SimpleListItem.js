@@ -26,10 +26,7 @@ export default class SimpleListItem extends Component {
       <div
         onClick={this._handleClick}
         style={{ animationDelay: `${this.props._id * 0.05}s` }}
-        className={`${_["list-item"]} ${
-          this.state.showDetails ? _["list-item--details"] : ""
-        }`}
-      >
+        className={`${_["list-item"]} ${this.state.showDetails ? _["list-item--details"] : ""}`}>
         <div className={_["list-item__image"]}>
           <div className={_["list-item__avatar"]} />
         </div>
@@ -37,9 +34,8 @@ export default class SimpleListItem extends Component {
           <h3 className={_["list-item__header"]}>HEADER</h3>
           <h4 className={_["list-item__sub-header"]}>SUB</h4>
           <p className={_["list-item__content"]}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            fugiat veritatis sint unde! Consequatur quidem eum ex, ullam dolorem
-            non sed esse iure
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fugiat veritatis sint unde! Consequatur quidem eum ex, ullam dolorem non
+            sed esse iure
           </p>
         </div>
       </div>

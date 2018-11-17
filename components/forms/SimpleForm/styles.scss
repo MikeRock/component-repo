@@ -1,20 +1,19 @@
 @import 'globals';
-
 .form {
     position: absolute;
     width: 500px;
     background: white;
     left: 50%;
     top: 50%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transform: translate(-50%,-50%);
-     & * {
-         box-sizing: border-box;
-     }
-     &::after {
-         content: '';
-         display: table;
-     }
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%);
+    & * {
+        box-sizing: border-box;
+    }
+    &::after {
+        content: '';
+        display: table;
+    }
 }
 
 .form__avatar {
@@ -27,6 +26,7 @@
     transform: translateY(-50%);
     background: $form__avatar--bg;
 }
+
 .form__fields {
     margin-top: -50px;
     &::after {
@@ -34,6 +34,7 @@
         display: table;
     }
 }
+
 .form__field {
     padding: 0 0;
     padding-top: 20px;
@@ -51,7 +52,7 @@
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $form__input--border-color;
-    &:focus + .form__input-label {
+    &:focus+.form__input-label {
         transform: translate(-50%) translateY(-100%) scale(1.1);
         color: $form__input-label--text-color-active;
     }
@@ -85,5 +86,3 @@
     border-radius: 20px;
     color: white;
 }
-
-

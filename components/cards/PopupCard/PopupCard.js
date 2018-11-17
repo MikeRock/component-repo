@@ -36,8 +36,8 @@ export default class PopupCard extends Component {
           </ul>
           <p className={_["card__body-text"]}>
             {" "}
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, ullam distinctio. Ipsa id architecto minima optio
-            pariatur dolore soluta! Perspiciatis
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, ullam distinctio. Ipsa id architecto minima optio pariatur dolore soluta!
+            Perspiciatis
           </p>
         </div>
       </div>
